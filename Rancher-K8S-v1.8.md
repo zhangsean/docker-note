@@ -1,5 +1,6 @@
 # Rancher K8S
 ### Rancher v1.6.11-rc3
+### K8S v1.8.2-rancher1
 
 * Required Images list
 ```
