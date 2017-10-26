@@ -1,6 +1,5 @@
 # Rancher K8S
-### Rancher Server v1.6.11-rc3
-### Rancher Agent v1.2.6
+### Rancher v1.6.11-rc3
 
 * Required Images list
 ```
