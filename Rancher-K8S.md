@@ -68,12 +68,13 @@ docker run -itd -p 80:8080 --restart=unless-stopped --name rancher-server hub.lo
 * Login to Rancher Dashboard
 
 * Edit System Setting
-registry.default=`hub.local.com`
-* Add Environment Template
-edit setting:
-Private Registry for Add-Ons and Pod Infra Container Image
+> registry.default=`hub.local.com`
+
+* Add Environment Template and edit setting:
+> Private Registry for Add-Ons and Pod Infra Container Image
 `hub.local.com`
-Pod Infra Container Image
+
+> Pod Infra Container Image
 `google_containers/pause-amd64:3.0`
 
 * Add Kubernetes Environments
