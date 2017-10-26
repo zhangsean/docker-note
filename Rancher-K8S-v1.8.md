@@ -48,7 +48,7 @@ EOF
 * Disable swap on every node
 ```
 swapoff -a
-sed '/swap/s/^/#/' /etc/fstab
+sed -i '/swap/s/^/#/' /etc/fstab
 reboot
 ```
 
@@ -84,9 +84,9 @@ docker run -itd -p 80:8080 --restart=unless-stopped --name rancher-server hub.lo
 > registry.default=`hub.local.com`
 
 * Add Environment Template and edit setting:
-> Private Registry for Add-Ons and Pod Infra Container Image
-`hub.local.com`
->Pod Infra Container Image
+> Private Registry for Add-Ons and Pod Infra Container Image  
+`hub.local.com`  
+>Pod Infra Container Image  
 `google_containers/pause-amd64:3.0`
 
 * Add Kubernetes Environments
