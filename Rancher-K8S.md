@@ -73,7 +73,6 @@ docker run -itd -p 80:8080 --restart=unless-stopped --name rancher-server hub.lo
 * Add Environment Template and edit setting:
 > Private Registry for Add-Ons and Pod Infra Container Image
 `hub.local.com`
-
 > Pod Infra Container Image
 `google_containers/pause-amd64:3.0`
 

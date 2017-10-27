@@ -26,14 +26,14 @@ rancher/net:holder
 * K8S internal Images from `registry.cn-shenzhen.aliyuncs.com/rancher_cn/`
 ```
 pause-amd64:3.0
-heapster-influxdb-amd64:v1.3.3
-heapster-amd64:v1.3.0-beta.1
-heapster-grafana-amd64:v4.0.2
+k8s-dns-sidecar-amd64:1.14.5
 k8s-dns-kube-dns-amd64:1.14.5
 k8s-dns-dnsmasq-nanny-amd64:1.14.5
-k8s-dns-sidecar-amd64:1.14.5
-kubernetes-dashboard-amd64:v1.6.1
-tiller:v2.3.0
+heapster-influxdb-amd64:v1.3.3
+heapster-grafana-amd64:v4.4.3
+kubernetes-dashboard-amd64:v1.6.3
+heapster-amd64:v1.4.0
+tiller:v2.6.1
 ```
 
 * Edit `/etc/hosts` on every node
@@ -48,7 +48,7 @@ EOF
 * Disable swap on every node
 ```
 swapoff -a
-sed '/swap/s/^/#/' /etc/fstab
+sed -i '/swap/s/^/#/' /etc/fstab
 reboot
 ```
 
@@ -84,10 +84,9 @@ docker run -itd -p 80:8080 --restart=unless-stopped --name rancher-server hub.lo
 > registry.default=`hub.local.com`
 
 * Add Environment Template and edit setting:
-> Private Registry for Add-Ons and Pod Infra Container Image
-`hub.local.com`
-
-> Pod Infra Container Image
+> Private Registry for Add-Ons and Pod Infra Container Image  
+`hub.local.com`  
+>Pod Infra Container Image  
 `google_containers/pause-amd64:3.0`
 
 * Add Kubernetes Environments
