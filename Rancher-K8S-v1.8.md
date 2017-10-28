@@ -21,6 +21,7 @@ rancher/etcd:holder
 rancher/etc-host-updater:v0.0.3
 rancher/scheduler:v0.8.2
 rancher/net:holder
+rancher/lb-service-haproxy:v0.7.13
 ```
 
 * K8S internal Images from `registry.cn-shenzhen.aliyuncs.com/rancher_cn/`
@@ -85,9 +86,13 @@ docker run -itd -p 80:8080 --restart=unless-stopped --name rancher-server hub.lo
 
 * Add Environment Template and edit setting:
 > Private Registry for Add-Ons and Pod Infra Container Image  
-`hub.local.com`  
->Pod Infra Container Image  
-`google_containers/pause-amd64:3.0`
+`registry.cn-shenzhen.aliyuncs.com`  
+> Pod Infra Container Image  
+`rancher_cn/pause-amd64:3.0`  
+> Image namespace for  Add-Ons and Pod Infra Container Image  
+`rancher_cn`  
+> Image namespace for kubernetes-helm Image  
+`rancher_cn`  
 
 * Add Kubernetes Environments
 
