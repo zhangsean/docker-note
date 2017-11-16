@@ -14,7 +14,7 @@ rancher/k8s:v1.8.3-rancher1
 rancher/kubectld:v0.8.5
 rancher/kubernetes-agent:v0.6.6
 rancher/kubernetes-auth:v0.0.8
-rancher/lb-service-haproxy:v0.7.13
+rancher/lb-service-haproxy:v0.7.15
 rancher/lb-service-rancher:v0.7.10
 rancher/metadata:v0.9.5
 rancher/net:holder
