@@ -6,6 +6,7 @@ rancher:
       dns:
         nameservers:
         - 10.0.8.2
+        - 10.0.1.1
   docker:
     insecure_registry:
     - 10.0.0.0/8
@@ -25,4 +26,5 @@ rancher:
     dev: LABEL=RANCHER_STATE
     wait: true
 ssh_authorized_keys:
-- ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDgV9ZF7exUyBXFnAMiMI0ei05CE8h00HykLU7OxquBFQ6hig0sl6/SxfFm2tJdMjJwHbSkWYZXiW+WpYCpMluxGdU65uz0nxQAXmCRiBf7kpeYKREqHn/nykahF8HDA0eMjOLtQI+EPBIO5p4/of2s+m4vcUjHedPw+Z3R0ni++apYTpMr42pKL6PFtRTIIZ60atFiWU/7S55JTx03C935HA242h7pSN4UExZmNxq4LFN0xW8hDIWLj7EEbt7wCGHJqPYA1ornp0qEBTj8XRBZCR+05y9ZKvpIrHti+QDVFakkKqDEto6ZhmA8IAv8gLuFDIRuFd2xQiKgkxttKsHz rancher@rancher
+- ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDgV9ZF7exUyBXFnAMiMI0ei05CE8h00HykLU7OxquBFQ6hig0sl6/SxfFm2tJdMjJwHbSkWYZXiW+WpYCpMluxGdU65uz0nxQAXmCRiBf7kpeYKREqHn/nykahF8HDA0eMjOLtQI+EPBIO5p4/of2s+m4vcUjHedPw+Z3R0ni++apYTpMr42pKL6PFtRTIIZ60atFiWU/7S55JTx03C935HA242h7pSN4UExZmNxq4LFN0xW8hDIWLj7EEbt7wCGHJqPYA1ornp0qEBTj8XRBZCR+05y9ZKvpIrHti+QDVFakkKqDEto6ZhmA8IAv8gLuFDIRuFd2xQiKgkxttKsHz
+  rancher@rancher
