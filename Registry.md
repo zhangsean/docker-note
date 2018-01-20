@@ -28,8 +28,12 @@ docker run -itd -p 88:8080 --name registry-web --link registry -v $PWD/registry-
 
 * Enable delete images in registry
 ```
-docker exec -it registry sh
-vi /etc/docker/registry/config.yml
+$ docker exec -it registry sh
+# cat /etc/docker/registry/config.yml
+# sed -i '10 i \  delete:' /etc/docker/registry/config.yml
+# sed -i '11 i \    enabled: true' /etc/docker/registry/config.yml
+# exit
+$ docker restart registry
 ```
 Add following property to registry config file
 ```
