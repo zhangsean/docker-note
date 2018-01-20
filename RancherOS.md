@@ -46,7 +46,13 @@ sudo ros install -c cloud-config.yml -d /dev/sda
 
 配置
 ```
-sudo ros c set rancher.docker.insecure_registry ["http://10.0.1.6"]
-sudo ros c set rancher.docker.registry_mirror "http://10.0.1.6"
-sudo ros c get rancher.docker
+sudo ros c set rancher.defaults.docker.insecure_registry [10.0.0.0/8,192.168.0.0/16]
+sudo ros c set rancher.defaults.docker.registry_mirror https://3c51jta7.mirror.aliyuncs.com/
+sudo ros c get rancher.defaults.docker
+
+sudo ros c set rancher.network.interfaces.eth0.dhcp false
+sudo ros c set rancher.network.interfaces.eth0.address 10.0.1.6/24
+sudo ros c get rancher.network.interfaces
+
+sudo reboot
 ```
