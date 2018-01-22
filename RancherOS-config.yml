@@ -1,17 +1,10 @@
 EXTRA_CMDLINE: /init
 rancher:
   defaults:
-    docker:
-      insecure_registry:
-      - 10.0.0.0/8
-      - 192.168.0.0/16
-      registry_mirror: https://3c51jta7.mirror.aliyuncs.com/
-    hostname: hub
+    hostname: node1
     network:
       dns:
-        nameservers:
-        - 10.0.8.2
-        - 10.0.1.1
+        nameservers: []
   docker:
     insecure_registry:
     - 10.0.0.0/8
@@ -19,15 +12,16 @@ rancher:
     registry_mirror: https://3c51jta7.mirror.aliyuncs.com
   environment:
     EXTRA_CMDLINE: /init
-  hostname: hub
+  hostname: node1
   network:
     dns:
       nameservers:
+      - 10.0.1.6
+      - 10.0.1.1
       - 10.0.8.2
-    hostname: hub
     interfaces:
       eth0:
-        address: 10.0.1.6/24
+        address: 10.0.1.11/24
         dhcp: false
     nameservers:
     - 10.0.8.2
