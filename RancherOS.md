@@ -27,7 +27,7 @@ vi cloud-config.yml #编辑文件，按照以下格式把id_rsa.pub的内容粘�
 ```
 ```
 ssh_authorized_keys:
-- ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDc008sjby03bDODhvU1/cXn+oouNRdzrVtOgVpwlSz4QwWS4Fk22w39KGWB9NXnc3Dg5mnis4Ony+v0FvANp2yQKJq4YUUMar2F/e350rAb6Bp1M+gk50zf7mFjG9SciW71DpejPzzFun1HxPCipa0FMFIG3sn3eOgoRrLRJoSrJogMRIZVy0VPi7vNoMcOwqApXxqoC4ncKnmrqlcfeqokJ8qu/i177m35kMv3ixh9BzsUo+O/Bge72Zx/sgrtxoR/KCzbXt3VYIxtKfNkZshqqnRkRFTMNmndEVTuSIZiV61YhBX6af7LfrKpr/0cII+J8DEfL7AjMq2GH1wrFJ7 rancher@rancher  
+- ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDc008sjby03bDODhvU1/cXn+oouNRdzrVtOgVpwlSz4QwWS4Fk22w39KGWB9NXnc3Dg5mnis4Ony+v0FvANp2yQKJq4YUUMar2F/e350rAb6Bp1M+gk50zf7mFjG9SciW71DpejPzzFun1HxPCipa0FMFIG3sn3eOgoRrLRJoSrJogMRIZVy0VPi7vNoMcOwqApXxqoC4ncKnmrqlcfeqokJ8qu/i177m35kMv3ixh9BzsUo+O/Bge72Zx/sgrtxoR/KCzbXt3VYIxtKfNkZshqqnRRFTMNmndEVTuSIZiV61YhBX6af7LfrKpr/0cII+J8DEfL7AjMq2GH1wrFJ7 rancher@rancher  
 ```
 ```
 :wq #保存退出
@@ -46,13 +46,21 @@ sudo ros install -c cloud-config.yml -d /dev/sda
 
 配置
 ```
-sudo ros c set rancher.defaults.docker.insecure_registry [10.0.0.0/8,192.168.0.0/16]
-sudo ros c set rancher.defaults.docker.registry_mirror https://3c51jta7.mirror.aliyuncs.com/
-sudo ros c get rancher.defaults.docker
+sudo ros c set rancher.docker.insecure_registry [10.0.0.0/8,192.168.0.0/16]
+sudo ros c set rancher.docker.registry_mirror https://3c51jta7.mirror.aliyuncs.com/
+sudo ros c get rancher.docker
 
+sudo ros c set rancher.system_docker.insecure_registry [10.0.0.0/8,192.168.0.0/16]
+sudo ros c set rancher.system_docker.registry_mirror https://3c51jta7.mirror.aliyuncs.com/
+sudo ros c get rancher.system_docker
+
+sudo ros c set rancher.defaults.hostname node1
+sudo ros c get rancher.defaults.hostname
+
+sudo ros c set rancher.network.dns.nameservers [10.0.1.2,223.5.5.5]
 sudo ros c set rancher.network.interfaces.eth0.dhcp false
 sudo ros c set rancher.network.interfaces.eth0.address 10.0.1.6/24
-sudo ros c get rancher.network.interfaces
+sudo ros c get rancher.network
 
 sudo reboot
 ```
